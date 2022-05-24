@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PortFolio</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="menu.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+
+    <div class="ecran">
+
+      <div class="nav-content">
+        <div class="container active" id="home">
+          <h1>Home</h1>
+        </div>
+      <div class="container" id="bts">
+        <div class="box">
+          <div class="videoBx">
+            <img src="file:///C:/Users/gbrlm/OneDrive/Documents/Codage/NewPortFolio/M%C3%A9dia/efrei.jpeg">
+          </div>
+        <div class="contentBx">
+          <div class="content">
+            <h2>BTS SIO</h2>
+            <p>Le BTS Services informatique aux Organisations (SIO) s’adresse aux 
+              candidats qui souhaitent se former en deux ans aux métiers d’administrateur
+               réseau ou de développeur.</p>
+          </div>
+        </div>
+ </div>
+
+        <a href="file:///C:/Users/gbrlm/OneDrive/Documents/Codage/portfolio/btssio.pdf"><span>Plaquette</span></a>
+
+        <div class="box">
+     <div class="videoBx">
+            <img src="file:///C:/Users/gbrlm/OneDrive/Documents/Codage/NewPortFolio/M%C3%A9dia/efrei-paris.jpeg">
+          </div>
+        <div class="contentBx">
+          <div class="content">
+            <h2>Option SLAM</h2>
+            <p>L’option Solutions Logicielles et Applications
+               Métiers (SLAM) est  quant à lui plutôt un professionnel du développement, 
+                des langages et des outils informatiques.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="container" id="projets">
+        
+        <form class="calculator" name="calc">
+          <input class="value" type="text" name="txt" readonly="">
+          <span class="num clear" onclick="document.calc.txt.value =''">c</span>
+          <span class="num" onclick="document.calc.txt.value +='/'">/</span>
+          <span class="num" onclick="document.calc.txt.value +='*'">*</span>
+          <span class="num" onclick="document.calc.txt.value +='7'">7</span>
+          <span class="num" onclick="document.calc.txt.value +='8'">8</span>
+          <span class="num" onclick="document.calc.txt.value +='9'">9</span>
+          <span class="num" onclick="document.calc.txt.value +='-'">-</span>
+          <span class="num" onclick="document.calc.txt.value +='4'">4</span>
+          <span class="num" onclick="document.calc.txt.value +='5'">5</span>
+          <span class="num" onclick="document.calc.txt.value +='6'">6</span>
+          <span class="num plus" onclick="document.calc.txt.value +='+'">+</span>
+          <span class="num" onclick="document.calc.txt.value +='3'">3</span>
+          <span class="num" onclick="document.calc.txt.value +='2'">2</span>
+          <span class="num" onclick="document.calc.txt.value +='1'">1</span>
+          <span class="num" onclick="document.calc.txt.value +='0'">0</span>
+          <span class="num" onclick="document.calc.txt.value +='00'">00</span>
+          <span class="num" onclick="document.calc.txt.value +='.'">.</span>
+          <span class="num equal" onclick="document.calc.txt.value = eval(calc.txt.value)">=</span>
+        </form>
+
+        <canvas width="400" height="400" id="game">
+
+          <script src="main.js"></script>
+
+      </div>
+      <div class="container" id="veilles">
+        <h1>veilles</h1>
+      </div>
+    </div>
+
+    
+      <div class="navigation">
+        <ul>
+          <li class="list active">
+            <a href="#home">
+              <span class="icon">
+                <ion-icon name="home-outline"></ion-icon>
+              </span>
+              <span class="text">Home</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#bts">
+              <span class="icon">
+                <ion-icon name="book-outline"></ion-icon>
+              </span>
+              <span class="text">BTS</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#projets">
+              <span class="icon">
+                <ion-icon name="terminal-outline"></ion-icon>
+              </span>
+              <span class="text">Projets</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="#veilles">
+              <span class="icon">
+                <ion-icon name="search-outline"></ion-icon>
+              </span>
+              <span class="text">Veilles</span>
+            </a>
+          </li>
+          <li class="list">
+            <a href="menu.html">
+              <span class="icon">
+                <ion-icon name="exit-outline"></ion-icon>
+              </span>
+              <span class="text">Exit</span>
+            </a>
+          </li>
+          <div class="indicator"></div>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+       const containers = document.querySelectorAll(".container");
+      const list = document.querySelectorAll(".list");
+      function activeLink() {
+        containers.forEach((item) => item.classList.remove("active"));
+        list.forEach((item) => item.classList.remove("active"));
+        this.classList.add("active");
+        const tabName = this.children[0].getAttribute('href').replace('#', '')
+        const tab = document.getElementById(tabName)
+        tab.classList.add('active')
+      }
+      list.forEach((item) => {
+        item.addEventListener("click", activeLink)
+      });
+    </script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
